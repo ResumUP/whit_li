@@ -6,10 +6,10 @@ Gem::Specification.new do |s|
   s.name        = "whit_li"
   s.version     = WhitLi::VERSION
   s.authors     = ["Sergey Efremov"]
-  s.email       = ["efremov.sergey@gmail.com"]
+  s.email       = ["sergey.efremov@resumup.com"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = "Whit.li Ruby wrapper"
+  s.description = "Whit.li Ruby wrapper"
 
   s.rubyforge_project = "whit_li"
 
@@ -21,4 +21,7 @@ Gem::Specification.new do |s|
   # specify any dependencies here; for example:
   # s.add_development_dependency "rspec"
   # s.add_runtime_dependency "rest-client"
+  s.add_dependency(%q<multi_json>, [">= 0"])
+  s.add_dependency(%q<hashie>, [">= 0"])
+  s.add_dependency(%q<rest-client>, [">= 0"])
 end
