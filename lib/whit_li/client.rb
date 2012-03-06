@@ -10,7 +10,7 @@ module WhitLi
     end
 
     def import_token fb_id, token
-      api_call "user/importToken", "get", { :uid => fb_id, :oauth_token => token }
+      api_call "user/importToken", "post", { :uid => fb_id, :oauth_token => token }
     end
 
     def populate fb_id
@@ -34,7 +34,7 @@ module WhitLi
     def api_call path, method = "get", params = {}
       params = params.merge({:api_key => @api_key, :format => WhitLi::Config::FORMAT})
       begin
-        response = RestClient.send method, "#{WhitLi::Config::API_URL}/#{path}", params
+        response = RestClient.send method, [WhitLi::Config::API_URL, path].join("/"), params
       rescue => e
         raise_errors e.response  
       end
