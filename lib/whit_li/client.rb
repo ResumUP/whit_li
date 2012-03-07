@@ -31,6 +31,10 @@ module WhitLi
 
     private
 
+    def raise_response_error response
+      #pending
+    end
+
     def api_call path, method = "get", params = {}
       params = params.merge({:api_key => @api_key, :format => WhitLi::Config::FORMAT})
       begin
@@ -38,7 +42,6 @@ module WhitLi
       rescue => e
         raise_errors e.response  
       end
-      raise_errors response
       WhitLi::Mash.from_json response.body
     end
 
