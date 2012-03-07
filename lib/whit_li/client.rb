@@ -34,7 +34,7 @@ module WhitLi
     def api_call path, method = "get", params = {}
       params = params.merge({:api_key => @api_key, :format => WhitLi::Config::FORMAT})
       begin
-        response = RestClient.send method, [WhitLi::Config::API_URL, path].join("/")+"."+params[:format], params
+        response = RestClient.send method, [WhitLi::Config::API_URL, path].join("/")+"."+params[:format], { :params => params }
       rescue => e
         raise_errors e.response  
       end
