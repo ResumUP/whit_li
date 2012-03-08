@@ -38,7 +38,17 @@ module WhitLi
     def api_call path, method = "get", params = {}
       params = params.merge({:api_key => @api_key, :format => WhitLi::Config::FORMAT})
       begin
-        response = RestClient.send method, [WhitLi::Config::API_URL, path].join("/")+"."+params[:format], { :params => params }
+        case method
+          when "get"
+            response = RestClient.get [WhitLi::Config::API_URL, path].join("/"), { :params => params }
+          when "put"
+            response = RestClient.put [WhitLi::Config::API_URL, path].join("/"), params, {:accept => :json}
+          when "post"
+            response = RestClient.post [WhitLi::Config::API_URL, path].join("/"), params, {:accept => :json}
+          else
+            response = RestClient.send method, [WhitLi::Config::API_URL, path].join("/"), { :params => params }    
+        end
+        
       rescue => e
         raise_errors e.response  
       end
