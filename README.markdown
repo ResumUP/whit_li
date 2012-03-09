@@ -15,9 +15,7 @@ Or via bundler:
 
 ## Usage
 
-### Authenticate
-
-LinkedIn's API uses Oauth for authentication. Luckily, the LinkedIn gem hides most of the gory details from you.
+### Usage examples
 
     require 'rubygems'
     require 'whit_li'
