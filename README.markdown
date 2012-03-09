@@ -1,6 +1,6 @@
 # WhitLi
 
-Ruby wrapper for the [WhitLi API](http://developer.whit.li), provides an easy-to-use wrapper for LinkedIn's Oauth/XML APIs. Originally developed for [ResumUP](http://resumup.com)
+Ruby wrapper for the [WhitLi API](http://developer.whit.li), provides an easy-to-use wrapper for WhitLi APIs. Originally developed for [ResumUP](http://resumup.com)
 
 ## Installation
 
