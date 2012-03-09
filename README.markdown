@@ -53,4 +53,4 @@ Or via bundler:
 
 ## Copyright
 
-Copyright (c)2012 [Sergey Efremov](https://github.com/EvilFaeton). See LICENSE for details.
+See LICENSE for details.
